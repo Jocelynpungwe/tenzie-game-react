@@ -20,6 +20,11 @@ function App() {
     {
       setUserWin(true)
       setTenzies(true)
+      setBestRoll(prevRole => {
+        return prevRole === 0 ? prevRole = numRoll : prevRole > numRoll 
+                             ? prevRole = numRoll : prevRole
+       })
+       
     }else if(allDiceHold && !checkIfWins)
     {
       setTenzies(true)
@@ -57,10 +62,6 @@ function App() {
       setUserWin(false)
       setDice(getDice)
       setTenzies(false)
-      setBestRoll(prevRole => {
-       return prevRole === 0 ? prevRole = numRoll : prevRole > numRoll 
-                            ? prevRole = numRoll : prevRole
-      })
       setNumRoll(0)
     }
     
